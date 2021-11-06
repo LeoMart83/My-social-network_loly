@@ -1,0 +1,25 @@
+.nav{
+  background-color: #c3d1d4;
+  flex: 0 1 20%;
+  height: 600px;    border-radius: 30px
+}
+.nav ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-size: 20px;
+  width: 150px;
+}
+.nav ul li{
+  padding-bottom: 10px;
+  border-bottom: 4px dotted #dfdfdd;
+  cursor: pointer;
+  color: #6c777c;
+  font-weight: bold;
+}

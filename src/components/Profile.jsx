@@ -1,8 +1,9 @@
 import contentImg from './../img/content-img.jpg';
+import style from './Profile.module.css';
 
 const Profile = () => {
     return (
-        <div className='content'>
+        <div className={style.content}>
             <img src={contentImg} />
             <div>Ava + discription</div>
             <div>My post</div>

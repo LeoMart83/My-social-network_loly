@@ -1,12 +1,15 @@
+import style from './Navbar.module.css';
+
+
 const Navbar = () => {
     return (
-        <div className='nav'>
+        <div className={style.nav}>
             <ul>
-                <li>Profile</li>
-                <li>Messages</li>
-                <li>Music</li>
-                <li>Settings</li>
-                <li>News</li>
+                <li><a>Profile</a></li>
+                <li><a>Messages</a></li>
+                <li><a>Music</a></li>
+                <li><a>Settings</a></li>
+                <li><a>News</a></li>
             </ul>
         </div>
     )
