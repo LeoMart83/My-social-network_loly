@@ -1,5 +1,4 @@
 import userImg from './../../../../img/user.png';
-import Likes from './Likes';
 import style from './Post.module.css';
 
 const Post = (props) => {
@@ -7,7 +6,9 @@ const Post = (props) => {
         <div>
             <img src={userImg} className={style.user} />
             {props.message}
-            <Likes number='5' />
+            <p>Likes 
+                {props.likes}
+            </p>
         </div>
     )
 }

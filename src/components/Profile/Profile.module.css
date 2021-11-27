@@ -1,12 +1,5 @@
 .content{
-    /* background-color: #c3b1bd; */
-    background-color: #dfdfdd;
-    margin-left: 15px;
-    flex: 0 1 865px;
-    display: flex;
-    /* justify-content: center; */
-    flex-direction: column;
-    border-radius: 30px;
+  
   }
   .content img{
     align-self: flex-start;

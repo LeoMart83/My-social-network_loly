@@ -7,5 +7,13 @@
   display: flex;
   flex-wrap: wrap;
 }
+.wrapper-content{
+  background-color: #dfdfdd;
+  margin-left: 15px;
+  flex: 0 1 865px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
 
 
