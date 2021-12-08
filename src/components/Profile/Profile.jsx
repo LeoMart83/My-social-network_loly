@@ -1,15 +1,12 @@
-import contentImg from './../../img/content-img.jpg';
 import MyPosts from './MyPosts/MyPosts';
 import style from './Profile.module.css';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className={style.content}>
-            <img src={contentImg} />
-            <div>Ava + discription</div>
-            <div>My post</div>
-            <div>New post</div>
-            <MyPosts />
+            <ProfileInfo />
+            <MyPosts posts={props.state.posts} newPostText={props.state.newPostText} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />
         </div>
     )
 }

@@ -1,0 +1,16 @@
+.wrapper{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+textarea{
+    width: 600px;
+    height: 100px;
+    background-color: #dfdfdd;
+    outline: none;
+    border: 2px solid #70706f86;
+}
+.wrapperPost{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #70706f8f;
+}

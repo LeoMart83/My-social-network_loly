@@ -1,27 +1,32 @@
-import { NavLink } from 'react-router-dom';
-import style from './Messages.module.css'
+import React from 'react';
+import Dialog from './Dialog/Dialog';
+import Message from './Message/Message';
+import style from './Messages.module.css';
 
-const Dialog = (props) =>{
-    const path = '/messages/'+ props.id;
-    return(
-        <div className={style.user}>
-            <span><NavLink to={path}>{props.name}</NavLink></span>
-        </div>
-    )
-}
 
-const Messages = () =>{
+const Messages = (props) => {
+
+    let dialogsElements = props.state.dialogs.map(dialog => <Dialog name={dialog.name} id={dialog.id} />);
+    let messagesElements = props.state.messages.map(message => <Message message={message.message} />)
+
+    let newMessageElement = React.createRef();
+
+    let addMessage = () => {
+        let text = newMessageElement.current.value;
+        console.log(text);
+    }
+    
     return (
         <div className={style.messages}>
             <div className={style.users}>
-                <Dialog name='Leo' id='1' />
-                <Dialog name='Maria' id='2' />
-                <Dialog name='Dan' id='3' />
+                {dialogsElements}
             </div>
             <div className={style.userMessages}>
-                <span>hello</span>
-                <span>how r u?</span>
-                <span>im fine</span>
+                {messagesElements}
+                <div className={style.sendMessage}>
+                    <textarea ref={newMessageElement}></textarea>
+                    <button onClick={addMessage}>Отправить</button>
+                </div>
             </div>
         </div>
     )

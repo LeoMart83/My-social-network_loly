@@ -1,3 +1,4 @@
+
 .messages{
     display: flex;
 }
@@ -18,27 +19,38 @@
     position: relative;
 }
 .user:hover{
-    border: 3px solid #a1b8c0;
-    background-color: #a1b8c0;
+    outline: 4px solid #a1b8c0;
     color: #dfdfdd;
 }
-.user span{
-    position: absolute;
-    top: 25%;
-    left: 15%;
-}
 .user span a{
+    display: inline-block;
+    height: 50px;
     text-decoration: none;
     color: #6c777c;
     font-weight: bold;
     font-size: 18px;
+    width: 196px;
+    border-radius: 30px;
+    padding: 10px 20px;
 }
-/* .user:hover ~ .user span a{
-    color: #dfdfdd;
-} */
 .userMessages{
     display: flex;
     flex-direction: column;
     flex: 0 1 80%;
     margin-top: 20px;
+}
+.sendMessage{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.sendMessage textarea{
+    width: 450px;
+    /* position: sticky;
+    bottom: 0px; */
+}
+.sendMessage button{
+    width: 100px;
+    height: 40px;
+    margin-right: 40px;
 }
