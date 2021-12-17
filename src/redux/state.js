@@ -1,3 +1,6 @@
+import messagesReducer from "./MessagesReducer";
+import profileReducer from "./ProfileReducer";
+
 let store = {
     _state: {
         profilePage: {
@@ -17,8 +20,10 @@ let store = {
                 { id: 1, message: 'hello' },
                 { id: 2, message: 'how r u?' },
                 { id: 3, message: 'im fine' }
-            ]
+            ],
+            newMessageText: ''
         }
+
     },
     _callSubscriber() {
 
@@ -27,31 +32,19 @@ let store = {
     getState() {
         return this._state
     },
+
     subscribe(observer) {
         this._callSubscriber = observer;
     },
 
     dispatchEvent(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likes: 0,
-                name: 'Dan'
-            }
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+
+        this._callSubscriber(this._state);
     }
 }
 
-export const addPostActionCreator = () => ({type: 'ADD-POST'}) 
-
-export const updateNewPostTextActionCreator = (text) => ({type: 'UPDATE-NEW-POST-TEXT', newText: text})
 
 
 

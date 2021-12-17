@@ -7,10 +7,12 @@ import Friends from './components/Friends/Friends';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { addPost } from './redux/state';
 
 
 const App = (props) => {
+
+  // console.log(props);
+
   return (
     <BrowserRouter>
       <div className='wrapper'>
@@ -19,7 +21,7 @@ const App = (props) => {
         <div className='wrapper-content'>
           <Routes>
             <Route path='/profile' element={<Profile state={props.state.profilePage} dispatch={props.dispatch} />} />
-            <Route path='/messages/*' element={<Messages state={props.state.messagesPage} />}  />
+            <Route path='/messages/*' element={<Messages state={props.state.messagesPage} dispatch={props.dispatch} />}  />
             <Route path='/friends' element={<Friends />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />
