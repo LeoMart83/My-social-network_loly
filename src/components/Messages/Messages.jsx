@@ -7,11 +7,9 @@ import style from './Messages.module.css';
 const Messages = (props) => {
 
     const state = props.messagesPage;
-    
-    console.log(state);
 
-    let dialogsElements = state.dialogs.map(dialog => <Dialog name={dialog.name} id={dialog.id} />);
-    let messagesElements = state.messages.map(message => <Message message={message.message} />)
+    let dialogsElements = state.dialogs.map(dialog => <Dialog key={dialog.id} name={dialog.name} id={dialog.id} />);
+    let messagesElements = state.messages.map(message => <Message key={message.id} message={message.message} />)
 
     let newMessageText = state.newMessageText;
 
